@@ -1,0 +1,50 @@
+.nav ,.responsive { 
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 10%;
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 15px 0 0 rgb(109, 110, 113);
+    z-index: 1000;
+    /* box-shadow: 15px 20px 70px -10px; */
+}
+.responsive{
+    width: 100%;
+    background-color: rgb(109, 110, 113);
+}
+a.icon {
+    color: white;
+    display: none;
+    font-size: 36px;
+    z-index: 10001;
+    font-weight: bolder;
+}
+a.nav-option{
+    text-decoration: none;
+    color: white;
+    margin: 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+a.nav-option:hover{
+    color: rgb(21, 117, 187);
+}
+div.options {
+    display: flex;  
+    flex-direction: column;
+}
+
+@media screen and (max-width: 640px) {
+    .nav {display: none;}
+    a.icon {
+      float: left;
+      display: block;
+      z-index: 1001;
+      top: 1rem;
+      position: fixed;
+      left: 1rem;
+    }
+}

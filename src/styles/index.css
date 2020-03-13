@@ -1,0 +1,74 @@
+.alert p {
+  margin-bottom: 0!important;
+}
+body {
+  background: rgb(233,233,233 );  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top right, rgb(131,131,131), rgb(233, 233, 233));  
+  background: linear-gradient(to right, rgb(131, 131, 131),  rgb(233,233,233 )); 
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+header {
+  margin: 30px 0;
+}
+.contenido {
+  padding:20px;
+  margin-left: 15%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  font-family: 'Raleway', sans-serif;
+}
+div.logo{
+  align-self: center;
+  margin: 7rem 0;
+  box-shadow: 5px 5px 5px 5px rgba(127, 130, 133, .15);
+}
+
+@media screen and (max-width: 733px) {
+  .contenido{
+    margin-left: 0;
+  }
+  .logo{    
+    margin: 88% 0 !important;
+  }
+  .bandelier-logo{
+    width: 100%;
+    height: auto;
+  }
+  .card {
+    width: 85% !important;
+    margin: 3rem 0rem !important;
+    padding: 1rem .5rem !important;
+    align-self: center;
+  }
+  .card-content i.card-icon{
+    font-size: 8rem;
+}
+  .card .wraper {
+    margin: 0;
+  }
+  .card .card-content{
+    flex-direction: column;
+  }
+  .card.reverse .card-content{
+    flex-direction: column-reverse;
+  }
+  .card .card-icon{
+    align-self: center;
+  }
+  .responsive .options {
+    margin-top: 30%;
+  }
+  a.nav-option {
+    border-bottom: rgb(131, 131, 131);
+    border-bottom-style: solid;
+    text-align: center;
+    margin: 1.5rem 1rem !important;
+  }
+}

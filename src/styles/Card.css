@@ -1,0 +1,51 @@
+.card {
+    width:90%;
+    /* transform:rotate(-4deg); */
+    border-radius: .5rem;
+    box-shadow: 5px 5px 5px 5px rgba(127, 130, 133, .15);
+    margin: 5rem 2rem;
+    background-color: white;
+    padding: 2rem;
+}
+.wraper {
+    /* transform: rotate(4deg); */
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.card-content {
+    display: flex;
+    flex-direction: row;
+}
+h2.title {
+    color: rgb(21, 117, 187);
+    border-bottom: rgb(21, 117, 187);
+    border-bottom-style: solid;
+}
+.card-content {
+    color: rgb(127, 130, 133);
+}
+.card-content img {
+    height: 15rem;
+    width: auto;
+}
+.card-content p{
+    font-size: 1rem;
+    margin: 1rem 2rem;
+}
+.card-content i.card-icon{
+    font-size: 10rem;
+    color: rgb(21, 117, 187);
+}
+.card.reverse {
+    /* transform:rotate(-4deg); */
+}
+.reverse .card-content{
+    flex-direction: row-reverse;
+}
+.reverse h2.title {
+    text-align: right;
+}
+.reverse .wraper{
+        /* transform: rotate(4deg); */
+}
