@@ -29,6 +29,9 @@ div.logo{
   margin: 7rem 0;
   box-shadow: 5px 5px 5px 5px rgba(127, 130, 133, .15);
 }
+.portfolio-area {
+   background: linear-gradient(to right, rgb(131, 131, 131),  rgb(233,233,233 )) !important;
+}
 
 @media screen and (max-width: 733px) {
   .contenido{
@@ -43,7 +46,6 @@ div.logo{
   }
   .card {
     width: 85% !important;
-    margin: 3rem 0rem !important;
     padding: 1rem .5rem !important;
     align-self: center;
   }

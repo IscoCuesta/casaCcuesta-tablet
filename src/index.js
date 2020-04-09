@@ -1,12 +1,36 @@
-import React from 'react';
+// React Required
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
+
+// Create Import File
+import './index.css';
+import './styles/index.css'
+
+// Common Layout
+// import Layout from "./component/common/App";
+
+
+// Home layout
+import Paralax from './components/Paralax';
 import App from './App';
+
+
+import { BrowserRouter, Switch, Route  } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class Root extends Component{
+    render(){
+        return(
+            <BrowserRouter basename={'/'}>
+                <Switch>
+                    <Route exact path={`${process.env.PUBLIC_URL}/`} component={App}/>
+                    <Route exact path={`${process.env.PUBLIC_URL}/paralax`} component={Paralax}/>
+                </Switch>
+            </BrowserRouter>
+        )
+    }
+}
+
+ReactDOM.render(<Root/>, document.getElementById('root'));
+serviceWorker.register();
