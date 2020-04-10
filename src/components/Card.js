@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 
-import Opcion from "./Opcion";
+import Opciones from "./Opciones";
 import "../styles/Card.css"
 
 
@@ -10,7 +10,7 @@ const Card = ({info}) => {
     
   const [ titulo, guardartitulo ] = useState(null);
   const [ opciones, guardaropciones ] = useState(null);
-  const [ click, guardarclick ] = useState({});
+  const [ Selecion, guardarSelecion ] = useState({});
 
 
     useEffect(() => {
@@ -37,10 +37,11 @@ const Card = ({info}) => {
                          <ul>
 
                          { opciones !== null?
-                            <Opcion
+                            <Opciones
                                 opciones={opciones}
                                 guardaropciones={guardaropciones}
-                            ></Opcion>
+                                guardarSelecion={guardarSelecion}
+                            ></Opciones>
                                : null }
                         </ul>
                     </div>                

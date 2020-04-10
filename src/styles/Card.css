@@ -27,7 +27,7 @@
 .opcion {
     margin: 1rem;
 }
-.opcion.activo {
+.opcion.active {
     border-color: blue;
     border-style: dashed;
     border-width: 3px;

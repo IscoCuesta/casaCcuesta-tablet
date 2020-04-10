@@ -1,57 +1,38 @@
 import React, {useState, useEffect} from 'react';
 
 
-const Opcion = (props) => {
+const Opciones = (props) => {
 
   const [ opcion, guardaropcion ] = useState([]);
-  const [ Seleccion, guardarSeleccion ] = useState([]);
+
+  const {opcio, onClickSel , index, Selec} = props
 
 
     useEffect(() => {
         if(props == null){
             return
         }
-        guardaropcion(props.opciones)
+        render()
         // eslint-disable-next-line
-    }, [props])
-
-    const onClickSel = (opc, valor) => {
-        console.log(opc, valor)
-        opcion[opc].valores[valor].sel = true
-        console.log(opcion[opc].valores[valor])
-        props.guardaropciones(opcion)
+    }, [props, opcion])
 
 
-      }
 
-      if( opcion !== null){
-
-          return ( 
-              opcion !== null?
-              opcion.map((opcion , index) => {
-                  return(
-                      <div key={opcion.nombre}>
-                        <h4 className="sub-titulo">{opcion.nombre}</h4>
-                            <li key={opcion.nombre}>
-                                <select value={opcion.nombre}>
-                                    {opcion.valores.map((valor, ind) => (
-                                            <option value={valor}>
-                                                <div key={valor.valor} onClick={()=> onClickSel(index, ind)} className="opcion">
-                                                    <p>{valor.valor}</p>
-                                                    <img src={valor.img} alt={valor.valor}></img>
-                                                </div>
-                                            </option>
-                                        ))
-                                    }
-                                </select>
-                            </li>                               
+    let render = () => {
+          if( opcion !== []){          
+              return ( 
+                    opcio.valores.map((valor, ind) => (
+                        <div key={valor.valor} onClick={()=> onClickSel(index, ind)} className={Selec[opcio.nombre] ? opcio[opcio.nombre].sel? "opcion active": "opcion": "opcion"}>
+                                    <p>{valor.valor}</p>
+                                    <img src={valor.img} alt={valor.valor}></img>
                         </div>
-                        )})
-                        : null 
-                        );
-                        
+                        )))
+            } else {return null}
+
         }
+
+    return render()
 }
 
 
-export default Opcion;
+export default Opciones;
