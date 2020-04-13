@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import Opcion from "./Opcion";
+import Active from "./Active";
+import { FALSE } from 'node-sass';
 
 
 const Opciones = (props) => {
@@ -7,32 +8,40 @@ const Opciones = (props) => {
   const [ opcion, guardaropcion ] = useState([]);
   const [ Selec, guardarSelec ] = useState({});
 
+  const {opciones, guardaropciones, guardarSelecion} = props
+
 
     useEffect(() => {
         if(props == null){
             return
         }
-        guardaropcion(props.opciones)
+        guardaropcion(opciones)
+        guardarSelecion(Selec)
         render()
-        // eslint-disable-next-line
-    }, [props, opcion])
 
-    const limpiar = (opc, val) => {
-        
-        opcion[opc].valores.map( v => (v.sel =false))        
+        // eslint-disable-next-line
+    }, [props])
+
+    const limpiar = (opc, val) => {        
+        opcion[opc].valores.map( v => (v.sel = false))        
         opcion[opc].valores[val].sel = true
+
         const sel = Selec;
         sel[opcion[opc].nombre] = opcion[opc].valores[val]
+
         guardarSelec(sel)
+        guardarSelecion(Selec)
     }
 
     const onClickSel = (opc, valor) => {
         limpiar(opc, valor)
         console.log(Selec)
         guardaropcion(opcion)
-        props.guardarSelecion(Selec)
+        guardaropciones(opcion)
         render()
       }
+
+
 
     let render = () => {
           if( opcion !== null){
@@ -42,14 +51,22 @@ const Opciones = (props) => {
                   opcion.map((opcio , index) => {
                       return(
                           <div key={opcio.nombre}>
-                        <h4 className="sub-titulo">{opcio.nombre} {Selec[opcio.nombre] ? " : "+Selec[opcio.nombre].valor : " " }</h4>
+                        <h4 className="sub-titulo">{opcio.nombre}</h4>
                             <li key={opcio.nombre}>
-                                <Opcion
-                                    opcio={opcio}
-                                    index={index}
-                                    Selec={Selec}
-                                    onClickSel={onClickSel}
-                                ></Opcion>
+                            {opcio.valores.map((valor, ind) => {
+                                return(
+                                    
+                                        <Active
+                                        onClickSel={onClickSel}
+                                        valor={valor}
+                                        index={index}
+                                        ind={ind}
+                                        active={true}
+                                        ></Active>
+                                        
+                                    
+                            )})
+                            }
 
                             </li>                               
                         </div>
@@ -58,9 +75,9 @@ const Opciones = (props) => {
                         );
                         
                     } else {return null}
-        }
+                }
+                return render()
 
-        return render()
     }
 
 

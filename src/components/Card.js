@@ -19,16 +19,19 @@ const Card = ({info}) => {
         }
         guardartitulo(info.titulo)
         guardaropciones(info.opciones)
+        render()
+
         // eslint-disable-next-line
     }, [info, opciones])
 
 
 
+let render = () => {
 
     if(info == null){
         return null
     } else {
-
+        
         return ( 
             <div className={"card "}>
                 <div className="wraper">
@@ -42,13 +45,15 @@ const Card = ({info}) => {
                                 guardaropciones={guardaropciones}
                                 guardarSelecion={guardarSelecion}
                             ></Opciones>
-                               : null }
+                            : null }
                         </ul>
                     </div>                
                 </div>
             </div>
         );
     }
+    }
+    return render()
 }
 
 
