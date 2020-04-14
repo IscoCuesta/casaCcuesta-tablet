@@ -11,7 +11,7 @@ import './styles/index.css'
 
 
 // Home layout
-import Paralax from './components/Paralax';
+// import Paralax from './components/Paralax';
 import App from './App';
 
 
@@ -25,7 +25,6 @@ class Root extends Component{
             <BrowserRouter basename={'/'}>
                 <Switch>
                     <Route exact path={`${process.env.PUBLIC_URL}/`} component={App}/>
-                    <Route exact path={`${process.env.PUBLIC_URL}/paralax`} component={Paralax}/>
                 </Switch>
             </BrowserRouter>
         )

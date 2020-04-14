@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Active from "./Active";
-import { FALSE } from 'node-sass';
 
 
 const Opciones = (props) => {

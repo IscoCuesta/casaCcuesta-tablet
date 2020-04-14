@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Parallax } from "react-parallax";
+// import { Parallax } from "react-parallax";
 import Card from "./components/Card";
 import Seleccion from "./components/Seleccion";
 
@@ -165,7 +165,7 @@ function App() {
 
   return (
     <div>
-          <Parallax className="rn-paralax-portfolio"  strength={500} >
+          {/* <Parallax className="rn-paralax-portfolio"  strength={500} > */}
                     <div className="portfolio-area ptb--120">
                         <div className="container">
                             <div className="row">
@@ -190,7 +190,7 @@ function App() {
                             }
                         </div>
                     </div>
-                </Parallax>
+                {/* </Parallax> */}
           <div className="">
             <Card 
               info={opciones} 
