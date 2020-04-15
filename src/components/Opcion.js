@@ -43,7 +43,7 @@ const Opciones = (props) => {
           if( opcion !== []){          
               return ( 
                     opcio.valores.map((valor, ind) => {
-                        if(valor.sel){
+                        if(valor.sel == true){
                             return (
                             <div key={valor.valor} onClick={()=> onClickSel(index, ind)} className={"opcion active"}>
                                         <p>{valor.valor}</p>

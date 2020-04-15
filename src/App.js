@@ -12,7 +12,7 @@ function App() {
   const [ seleccionPrimaria, guardarseleccionPrimaria ] = useState(null);
   const [ opciones, guardarOpciones ] = useState(null);
 
-  const contenido = {
+  let contenido = {
     camisa: {
       titulo: "Camisa",
       opciones: [
@@ -22,16 +22,19 @@ function App() {
             {
               valor: "Italiano",
               sel: false,
+              key: "01",
               img: "./camisa/camisaCuelloItaliano.jpg"
             },
             {
               valor: "Clasico",
               sel: false,
+              key: "02",
               img: "./camisa/camisaCuelloClasico.jpg"
             },
             {
               valor: "Sport",
               sel: false,
+              key: "03",
               img: "./camisa/camisaCuelloSport.jpg"
             }
           ]
@@ -42,16 +45,19 @@ function App() {
             {
               valor: "redondo",
               sel: false,
+              key: "04",
               img: "./camisa/camisapunosItaliano.jpg"
             },
             {
               valor: "mancuernillas",
               sel: false,
+              key: "05",
               img: "./camisa/camisapunosClasico.jpg"
             },
             {
               valor: "mancuernillas redondo",
               sel: false,
+              key: "06",
               img: "./camisa/camisapunosSport.jpg"
             }
           ]
@@ -68,16 +74,19 @@ function App() {
             {
               valor: "Italiano",
               sel: false,
+              key: "07",
               img: "./camisa/camisaCuelloItaliano.jpg"
             },
             {
               valor: "Clasico",
               sel: false,
+              key: "08",
               img: "./camisa/camisaCuelloClasico.jpg"
             },
             {
               valor: "Sport",
               sel: false,
+              key: "09",
               img: "./camisa/camisaCuelloSport.jpg"
             }
           ]
@@ -88,16 +97,19 @@ function App() {
             {
               valor: "redondo",
               sel: false,
+              key: "10",
               img: "./camisa/camisapunosItaliano.jpg"
             },
             {
               valor: "mancuernillas",
               sel: false,
+              key: "11",
               img: "./camisa/camisapunosClasico.jpg"
             },
             {
               valor: "mancuernillas redondo",
               sel: false,
+              key: "12",
               img: "./camisa/camisapunosSport.jpg"
             }
           ]
@@ -114,16 +126,19 @@ function App() {
             {
               valor: "Italiano",
               sel: false,
+              key: "13",
               img: "./camisa/camisaCuelloItaliano.jpg"
             },
             {
               valor: "Clasico",
               sel: false,
+              key: "14",
               img: "./camisa/camisaCuelloClasico.jpg"
             },
             {
               valor: "Sport",
               sel: false,
+              key: "15",
               img: "./camisa/camisaCuelloSport.jpg"
             }
           ]
@@ -134,16 +149,19 @@ function App() {
             {
               valor: "redondo",
               sel: false,
+              key: "16",
               img: "./camisa/camisapunosItaliano.jpg"
             },
             {
               valor: "mancuernillas",
               sel: false,
+              key: "17",
               img: "./camisa/camisapunosClasico.jpg"
             },
             {
               valor: "mancuernillas redondo",
               sel: false,
+              key: "18",
               img: "./camisa/camisapunosSport.jpg"
             }
           ]

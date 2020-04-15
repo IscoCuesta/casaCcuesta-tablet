@@ -44,6 +44,7 @@ let render = () => {
                                 opciones={opciones}
                                 guardaropciones={guardaropciones}
                                 guardarSelecion={guardarSelecion}
+                                Selecion={Selecion}
                             ></Opciones>
                             : null }
                         </ul>

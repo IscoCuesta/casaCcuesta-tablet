@@ -7,7 +7,7 @@ const Opciones = (props) => {
   const [ opcion, guardaropcion ] = useState([]);
   const [ Selec, guardarSelec ] = useState({});
 
-  const {opciones, guardaropciones, guardarSelecion} = props
+  const {opciones, guardaropciones, guardarSelecion, Selecion} = props
 
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const Opciones = (props) => {
 
     const onClickSel = (opc, valor) => {
         limpiar(opc, valor)
-        console.log(Selec)
+        console.log(opcion[opc].valores[valor])
         guardaropcion(opcion)
         guardaropciones(opcion)
         render()
@@ -50,21 +50,20 @@ const Opciones = (props) => {
                   opcion.map((opcio , index) => {
                       return(
                           <div key={opcio.nombre}>
-                        <h4 className="sub-titulo">{opcio.nombre}</h4>
-                            <li key={opcio.nombre}>
+                            <h4 className="sub-titulo">{opcio.nombre}</h4>
+                            <li key={opcio.nombre+index}>
                             {opcio.valores.map((valor, ind) => {
                                 return(
-                                    
                                         <Active
                                         onClickSel={onClickSel}
                                         valor={valor}
                                         index={index}
                                         ind={ind}
-                                        active={true}
+                                        active={valor.sel}
                                         ></Active>
                                         
                                     
-                            )})
+                                )})
                             }
 
                             </li>                               
