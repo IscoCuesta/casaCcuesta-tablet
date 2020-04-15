@@ -21,9 +21,14 @@ const Opciones = (props) => {
         // eslint-disable-next-line
     }, [props])
 
+
     const limpiar = (opc, val) => {        
         opcion[opc].valores.map( v => (v.sel = false))        
         opcion[opc].valores[val].sel = true
+
+        
+        guardaropcion(opcion)
+        guardaropciones(opcion)
 
         const sel = Selec;
         sel[opcion[opc].nombre] = opcion[opc].valores[val]
@@ -34,9 +39,6 @@ const Opciones = (props) => {
 
     const onClickSel = (opc, valor) => {
         limpiar(opc, valor)
-        console.log(opcion[opc].valores[valor])
-        guardaropcion(opcion)
-        guardaropciones(opcion)
         render()
       }
 
@@ -51,15 +53,17 @@ const Opciones = (props) => {
                       return(
                           <div key={opcio.nombre}>
                             <h4 className="sub-titulo">{opcio.nombre}</h4>
-                            <li key={opcio.nombre+index}>
+                            <li key={index}>
                             {opcio.valores.map((valor, ind) => {
                                 return(
                                         <Active
-                                        onClickSel={onClickSel}
-                                        valor={valor}
-                                        index={index}
-                                        ind={ind}
-                                        active={valor.sel}
+                                            onClickSel={onClickSel}
+                                            valor={valor}
+                                            index={index}
+                                            ind={ind}
+                                            active={valor.sel}
+                                            Selec={Selec}
+                                            opcio={opcio.nombre}
                                         ></Active>
                                         
                                     
