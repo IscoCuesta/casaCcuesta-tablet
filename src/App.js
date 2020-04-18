@@ -26,6 +26,12 @@ function App() {
               img: "./camisa/camisaCuelloItaliano.jpg"
             },
             {
+              valor: "Pajarita",
+              sel: false,
+              key: "019",
+              img: "./camisa/camisaCuelloPajarita.jpg"
+            },
+            {
               valor: "Clasico",
               sel: false,
               key: "02",
@@ -40,25 +46,84 @@ function App() {
           ]
         },
         {
+          nombre: "Iniciales",
+          valores: [
+            {
+              valor: "Puño Izquierdo",
+              sel: false,
+              key: "01",
+              img: "./camisa/camisaInicialesPunoIzq.jpg"
+            },
+            {
+              valor: "Puño Derecho",
+              sel: false,
+              key: "01",
+              img: "./camisa/camisaInicialesPunoDer.jpg"
+            },
+            {
+              valor: "Pecho Izquierdo",
+              sel: false,
+              key: "01",
+              img: "./camisa/camisaInicialesPechoIzq.jpg"
+            },
+            {
+              valor: "Pecho Derecho",
+              sel: false,
+              key: "01",
+              img: "./camisa/camisaInicialesPechoDer.jpg"
+            },
+            {
+              valor: "Bajo Derecho",
+              sel: false,
+              key: "01",
+              img: "./camisa/camisaInicialesBajoDer.jpg"
+            },
+            {
+              valor: "Bajo Izquierdo",
+              sel: false,
+              key: "01",
+              img: "./camisa/camisaInicialesBajoIzq.jpg"
+            }
+          ]
+        },
+        {
           nombre: "punos",
           valores: [
             {
-              valor: "redondo",
+              valor: "Boton Redondo",
               sel: false,
-              key: "04",
-              img: "./camisa/camisapunosItaliano.jpg"
+              key: "041",
+              img: "./camisa/camisaPunoBotRed.jpg"
             },
             {
-              valor: "mancuernillas",
+              valor: "Boton Cuadrado",
               sel: false,
-              key: "05",
-              img: "./camisa/camisapunosClasico.jpg"
+              key: "042",
+              img: "./camisa/camisaPunoBotCuad.jpg"
             },
             {
-              valor: "mancuernillas redondo",
+              valor: "Mancuernillas Redondo",
               sel: false,
-              key: "06",
-              img: "./camisa/camisapunosSport.jpg"
+              key: "053",
+              img: "./camisa/camisaPunoManRed.jpg"
+            },
+            {
+              valor: "Mancuernillas Cuadrado Redondo",
+              sel: false,
+              key: "054",
+              img: "./camisa/camisaPunoManCuadRed.jpg"
+            },
+            {
+              valor: "Mancuernillas Cuadrado",
+              sel: false,
+              key: "055",
+              img: "./camisa/camisaPunoManCuad.jpg"
+            },
+            {
+              valor: "Mancuernillas Redondo Doble",
+              sel: false,
+              key: "066",
+              img: "./camisa/camisaPunoManRedDob.jpg"
             }
           ]
         }
