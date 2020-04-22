@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 
 import Opciones from "./Opciones";
+import Resumen from "./Resumen";
 import "../styles/Card.css"
 
 

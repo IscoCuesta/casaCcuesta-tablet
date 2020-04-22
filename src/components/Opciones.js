@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import Active from "./Active";
+import Resumen from "./Resumen";
 
 
 const Opciones = (props) => {
@@ -23,22 +24,22 @@ const Opciones = (props) => {
 
 
     const limpiar = (opc, val) => {        
+
+    }
+
+    const onClickSel = (opc, valor) => {
         opcion[opc].valores.map( v => (v.sel = false))        
-        opcion[opc].valores[val].sel = true
+        opcion[opc].valores[valor].sel = true
 
         
         guardaropcion(opcion)
         guardaropciones(opcion)
 
         const sel = Selec;
-        sel[opcion[opc].nombre] = opcion[opc].valores[val]
+        sel[opcion[opc].nombre] = opcion[opc].valores[valor]
 
         guardarSelec(sel)
         guardarSelecion(Selec)
-    }
-
-    const onClickSel = (opc, valor) => {
-        limpiar(opc, valor)
         render()
       }
 
@@ -49,31 +50,42 @@ const Opciones = (props) => {
               
               return ( 
                   opcion !== null?
-                  opcion.map((opcio , index) => {
+                  <Fragment>
+
+                  <Resumen
+                  Selec={Selec}
+                  opcion={opcion}
+                  >     
+                  </Resumen>
+
+                  {opcion.map((opcio , index) => {
                       return(
                           <div key={opcio.nombre}>
                             <h4 className="sub-titulo">{opcio.nombre}</h4>
-                            <li key={index}>
+                            <li>
                             {opcio.valores.map((valor, ind) => {
                                 return(
-                                        <Active
-                                            onClickSel={onClickSel}
-                                            valor={valor}
-                                            index={index}
-                                            ind={ind}
-                                            active={valor.sel}
-                                            Selec={Selec}
-                                            opcio={opcio.nombre}
-                                        ></Active>
-                                        
+                                    <Active
+                                    onClickSel={onClickSel}
+                                    valor={valor}
+                                    index={index}
+                                    ind={ind}
+                                    active={valor.sel}
+                                    Selec={Selec}
+                                    opcio={opcio.nombre}
+                                    ></Active>
                                     
-                                )})
-                            }
+                                    
+                                    )})
+                                }
 
                             </li>                               
                         </div>
-                        )})
+                        )})}
+                        </Fragment>
+
                         : null 
+                        
                         );
                         
                     } else {return null}

@@ -10,7 +10,6 @@ const Active = ({onClickSel, valor, index, ind, active, Selec, opcio}) => {
         if(active !== null && Selec[opcio] !== undefined && Selec !== {}){
             checkActive()
             render()
-            console.log(Selec[opcio].sel)
         }
 
         // eslint-disable-next-line
@@ -24,8 +23,7 @@ const Active = ({onClickSel, valor, index, ind, active, Selec, opcio}) => {
     const onClick01 = () => {
         if(Active === false){
             guardarActive(true)
-            onClickSel(index, ind)            
-            console.log(Selec)
+            onClickSel(index, ind)
         }
         onClickSel(index, ind)
         checkActive()
@@ -33,7 +31,6 @@ const Active = ({onClickSel, valor, index, ind, active, Selec, opcio}) => {
 
     const checkActive = ()=> {
         
-        console.log(Active && Selec[opcio].sel)
         if(Selec[opcio].sel){
             guardarActive(true)
         }else{
